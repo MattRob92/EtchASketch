@@ -8,6 +8,10 @@ const SketchArea = document.querySelector("#sketch-area");
 SketchArea.style.width =`${GRIDSIDE}px`;
 SketchArea.style.height = `${GRIDSIDE}px`
 
+function changeBackgroundColour() {
+    this.style.backgroundColor = "black";
+}
+
 
 //add for loop that creates a new div
 // sets the height and width of the div using cols and rows.
@@ -20,6 +24,9 @@ function CreateGridCells() {
         GridCell.classList.add("cell");
 
         SketchArea.appendChild(GridCell);
+
+        //add event for cells we just  created and call changebackgroundcolour function
+        GridCell.addEventListener("mouseover", changeBackgroundColour);
     }
 }
 
