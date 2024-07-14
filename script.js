@@ -1,3 +1,11 @@
+const slidercontainer = document.querySelector("#Slider-Container");
+const slider = document.querySelector('#Slider');
+const slidervalue = document.querySelector("#Slider-Value")
+
+slidervalue.textContent = `${slider.value} x ${slider.value} (Resolution)`;
+
+//--------Etch A Sketch Functions and Variables --------
+
 const GRIDSIDE = 600;
 let SquaresPerSide = 16;
 
@@ -11,9 +19,10 @@ function SetBackgroundColour() {
 }
 
 
+
 //add for loop that creates a new div
 // sets total number of squares & there heught and width
-function CreateGridCells() {
+function CreateGridCells(SquaresPerSide) {
     const numOfSquares = (SquaresPerSide * SquaresPerSide)
     const WidthOrHeight = `${(GRIDSIDE / SquaresPerSide)-2}px`;
 
@@ -31,4 +40,13 @@ function CreateGridCells() {
     }
 }
 
-CreateGridCells();
+//Remove Cells depending on slider
+//everytime first child is removed second child becomes
+//first child and is removed.
+function removeGridCells() {
+    while (SketchArea.firstChild) {
+        SketchArea.removeChild(SketchArea.firstChild);
+    }
+}
+
+CreateGridCells(16);
