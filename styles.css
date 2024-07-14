@@ -1,0 +1,21 @@
+/* prevent overlapping */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: burlywood;
+}
+
+#sketch-area {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 100px auto;
+    background-color: white;
+    box-shadow: 10px 10px black;
+}
+
+.cell {
+    border: 1px solid wheat;
+}
