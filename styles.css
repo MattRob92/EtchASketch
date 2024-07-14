@@ -11,9 +11,8 @@ body {
 #sketch-area {
     display: flex;
     flex-wrap: wrap;
-    margin: 100px auto;
+    margin: 100px auto 0 auto;
     background-color: white;
-    box-shadow: 10px 10px lightgray;
 }
 
 .cell {
@@ -21,7 +20,7 @@ body {
 }
 
 #Slider-Container {
-    margin: 0 auto;
+    margin: 20px auto 0 auto;
 }
 
 .Slider {
@@ -43,4 +42,13 @@ body {
 
 .Slider:hover {
     opacity: 1;
+}
+
+.Slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    background: brown;
+    cursor: pointer;
 }

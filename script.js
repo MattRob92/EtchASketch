@@ -4,6 +4,7 @@ const slidervalue = document.querySelector("#Slider-Value")
 
 slidervalue.textContent = `${slider.value} x ${slider.value} (Resolution)`;
 
+
 //--------Etch A Sketch Functions and Variables --------
 
 const GRIDSIDE = 600;
@@ -47,6 +48,15 @@ function removeGridCells() {
     while (SketchArea.firstChild) {
         SketchArea.removeChild(SketchArea.firstChild);
     }
+}
+
+//creates a function to get the value of resolution and then calls 
+//remove and create cells depending on that value
+slider.oninput = function() {
+    let txt = `${this.value} X ${this.value} {Resolution}`;
+    slidervalue.innerHTML = txt;
+    removeGridCells();
+    CreateGridCells(this.value);
 }
 
 CreateGridCells(16);
